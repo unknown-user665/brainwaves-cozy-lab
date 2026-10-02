@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroPulse Interactive - Mapping the Sensory Mind</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="theme-bubblegum pattern-grid">
+
+    <header>
+        <h1>🌸 NeuroPulse Interactive</h1>
+        <p>A Cute Neuropsychology Simulation Sandbox for Students</p>
+    </header>
+
+    <div class="container">
+        <!-- LEFT SIDEBAR: THEME CUSTOMIZATION -->
+        <div class="sidebar">
+            <h3 class="panel-title">🎨 Theme Customizer</h3>
+            
+            <div class="customizer-group">
+                <span class="customizer-label">Choose Base Color:</span>
+                <div class="color-options">
+                    <div class="color-dot active" style="background: #ff9ebb;" onclick="setTheme('bubblegum', this)"></div>
+                    <div class="color-dot" style="background: #a3c9a8;" onclick="setTheme('matcha', this)"></div>
+                    <div class="color-dot" style="background: #9ec5ff;" onclick="setTheme('sky', this)"></div>
+                </div>
+            </div>
+
+            <div class="customizer-group">
+                <span class="customizer-label">Choose Pattern:</span>
+                <div class="pattern-options">
+                    <button class="pattern-btn active" onclick="setPattern('grid', this)">Grid</button>
+                    <button class="pattern-btn" onclick="setPattern('sparkles', this)">Sparkles</button>
+                    <button class="pattern-btn" onclick="setPattern('clouds', this)">Clouds</button>
+                </div>
+            </div>
+
+            <div class="customizer-group" style="margin-top: 30px; text-align: center;">
+                <button class="btn btn-secondary" onclick="triggerRandomizer()">🎲 Surprise Me Spark!</button>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <h3 class="panel-title">🔬 Intracranial Electrophysiology Live Sandbox</h3>
+            
+            <div class="dashboard-grid">
+                <div class="sim-controls">
+                    <div class="control-card">
+                        <strong style="display:block; margin-bottom:8px;">1. Focused Ultrasound (FUS):</strong>
+                        <button class="btn" id="fus-btn" onclick="toggleFUS()">⚡ Target VPL Thalamus</button>
+                    </div>
+                    <div class="control-card">
+                        <strong style="display:block; margin-bottom:8px;">2. Peripheral Touch Signal:</strong>
+                        <button class="btn btn-secondary" onclick="triggerTouch()">✋ Tap Virtual Hand</button>
+                    </div>
+                    <div class="control-card">
+                        <strong>💡 Active Knowledge:</strong>
+                        <p id="info-box" style="margin:8px 0 0 0; font-size:0.9rem; line-height:1.4;">The VPL Thalamus coordinates incoming touch sensations. Use the buttons to send bursts!</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="graph-container">
+                        <svg class="graph-svg">
+                            <path class="graph-path" id="pulse-wave" d="M 0 90 L 400 90" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="articles-section">
+                <h3 class="panel-title" style="border:none;">📚 Interactive Student Article Hub</h3>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div class="tabs">
+                        <div class="tab active" id="tab-popular" onclick="switchTab('popular')">⭐ Popular Reads</div>
+                        <div class="tab" id="tab-recent" onclick="switchTab('recent')">⏰ Newly Published</div>
+                    </div>
+                    <button class="btn" style="padding: 6px 12px; font-size: 0.85rem;" onclick="loadRandomArticle()">📖 Teleport to Random Article</button>
+                </div>
+
+                <div id="popular-content">
+                    <div class="article-card active" id="art-1">
+                        <h4 class="article-title">How Focused Ultrasound Alters Real-Time Touch Perceptions</h4>
+                        <p style="font-size:0.9rem; margin:0;">An introductory look at how target acoustic paths into brain networks can temporarily block mechanical sensory relays without surgery.</p>
+                    </div>
+                    <div class="article-card" id="art-2">
+                        <h4 class="article-title">The Thalamus: Gateway Hub of the Human Mind</h4>
+                        <p style="font-size:0.9rem; margin:0;">Breaking down the vital filtering pathways that decide what sensory data reaches your conscious awareness.</p>
+                    </div>
+                </div>
+
+                <div id="recent-content" style="display:none;">
+                    <div class="article-card" id="art-3">
+                        <h4 class="article-title">New Breakthroughs in Deep Tissue Non-Invasive Neuromodulation</h4>
+                        <p style="font-size:0.9rem; margin:0;">Exploring the 2026 scientific boundaries of using high-precision acoustics to safely treat neural circuitry adjustments.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        Data Source Concept modeled using open-access scientific resources provided by the <a href="https://openneuro.org/" target="_blank">OpenNeuro Project</a>. 
+        Dataset Reference: <em>FUS and Tactile Neuromodulation in NHP VPL</em> (Dataset ID: <a href="https://openneuro.org/datasets/ds008610/versions/1.0.0" target="_blank">ds008610</a>, Version 1.0.0). Distributed via CC0 Public Domain Dedication.
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
